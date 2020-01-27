@@ -28,17 +28,11 @@ app.use(bodyParser.json()); // TODO: ayarlari yap
 // app.use(passport.initialize());
 // app.use(passport.session());
 
-mongoose.connect('mongodb+srv://admin-ubey:test123123@cluster0-jtqae.mongodb.net/todolistDB', {
+mongoose.connect( process.env.DB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
 mongoose.set('useCreateIndex', true);
-
-
-const userSchema = new mongoose.Schema({
-  email: String,
-  password: String
-});
 
 // userSchema.plugin(passportLocalMongoose);
 
